@@ -8,7 +8,7 @@ No KiiK temos varios produtos com tecnoligas diferentes:
 * [Phoenix](https://phoenixframework.org) - Admin do core
 * [Ruby](https://ruby-lang.org) - Bots (Telegram e Messenger)
 * [Java/Android](https://developer.android.com) - Wallet digital
-* [Object-C/IOs](https://developer.apple.com) - Wallet digital
+* [Objective-C/iOS](https://developer.apple.com) - Wallet digital
 * [Rails](http://rubyonrails.org/) - Admin da wallet
 
 ### Vagas
