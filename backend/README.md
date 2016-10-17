@@ -1,5 +1,5 @@
 # Teste Back-end
-Nesse teste é preciso fazer uma API REST (JSON), com um endpoint:
+Nesse teste é preciso fazer uma API REST (JSON), com um endpoint para criar transação:
 
 #### [POST] /charge
 ###### params:
