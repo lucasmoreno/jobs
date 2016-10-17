@@ -31,7 +31,7 @@ Nesse teste é preciso fazer uma API REST (JSON), com um endpoint:
 * Não é preciso persistir os dados em um banco
 * `intermediaries` é uma array com os intermediarios que receberam uma porcentagem (fee) e/ou valor fixo (flat) da transação
 * `amount` no retorno dos intermediarios precisa ser calculado sobre o `fee` e o `flat`
-* `card_id` no retorno pode ser randômico
+* `card_id` e `id` no retorno podem ser randômicos
 * Ao terminar, abra um PR do repo principal e entraremos em contato
 
 ## Boa sorte e que a força esteja com você !
