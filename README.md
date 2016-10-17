@@ -13,9 +13,9 @@ No KiiK temos varios produtos com tecnoligas diferentes:
 
 ### Vagas
 Todos nossos devs são fullstack, tendo expertise em uma linguagem 
-* 1 Junior
-* 1 Pleno
-* 0 Senior
+* 1 Junior (presencial)
+* 1 Pleno (presencial)
+* 0 Senior (presencial)
 
 ### Testes
 Para participar do processo é preciso fazer um fork desse repo e desenvolver pelo menos 1 dos testes presentes.
