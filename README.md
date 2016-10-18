@@ -1,5 +1,9 @@
 # Trabalhe no KiiK
-O KiiK é uma plaforma de pagamento, buscando sempre inovação e qualidade
+O KiiK é uma Startup plaforma de pagamento, buscando sempre inovação e qualidade
+
+## Detalhes
+* Vagas são presenciais (estamos na Rua Maranhão 600, Higienópolis, São Paulo - SP)
+* CLT + Benefícios (VR + VT + plano de saúde e plano odontológico)
 
 ### Tecnologias
 No KiiK temos varios produtos com tecnoligas diferentes:
@@ -13,9 +17,9 @@ No KiiK temos varios produtos com tecnoligas diferentes:
 
 ### Vagas
 Todos nossos devs são fullstack, tendo expertise em uma linguagem 
-* 1 Junior (presencial)
-* 1 Pleno (presencial)
-* 0 Senior (presencial)
+* 1 Junior
+* 1 Pleno
+* 0 Senior
 
 ### Testes
 Para participar do processo é preciso fazer um fork desse repo e desenvolver pelo menos 1 dos testes presentes.
