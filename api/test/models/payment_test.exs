@@ -4,8 +4,14 @@ defmodule Api.PaymentTest do
   alias Api.Payment
 
   @valid_attrs %{
-    amount: "120.5",
-    intermediaries: [],
+    amount: 120.5,
+    intermediaries: [
+      %{
+        description: "test",
+        fee: 0.02,
+        flat: 2
+      }
+    ],
     card: %{
       cvv: "111",
       expiration_month: "FEB",
@@ -14,7 +20,11 @@ defmodule Api.PaymentTest do
       number: "1111111111111111"
     }
   }
-  @invalid_attrs %{}
+  @invalid_attrs %{
+    amount: 120.5,
+    intermediaries: [],
+    card: %{}
+  }
 
   test "changeset with valid attributes" do
     changeset = Payment.changeset(%Payment{}, @valid_attrs)
