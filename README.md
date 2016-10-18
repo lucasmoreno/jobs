@@ -24,7 +24,7 @@ Todos nossos devs são fullstack, tendo expertise em uma linguagem
 ### Testes
 Para participar do processo é preciso fazer um fork desse repo e desenvolver pelo menos 1 dos testes presentes.
 * Linguagem e plataforma é escolha do desenvolvedor
-* É permitido usar framework/libs apenas open-source
+* É permitido usar qualquer linguagem/framework/lib, sendo open-source está ótimo!
 * É obrigatório ter README.md com instruções de como instalar dependencias e rodar a aplicação
 * Documentação no código é opcional (mas é um diferencial)
 
