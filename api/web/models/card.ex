@@ -4,12 +4,13 @@ defmodule Api.Card do
   @primary_key {:id, Ecto.UUID, autogenerate: false}
   @foreign_key_type Ecto.UUID
   schema "cards" do
+    has_many :payments, Api.Payment
+
     field :holder, :string
     field :number, :string
     field :cvv, :string
     field :expiration_month
     field :expiration_year
-
 
     timestamps()
   end
