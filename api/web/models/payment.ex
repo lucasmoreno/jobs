@@ -7,7 +7,8 @@ defmodule Api.Payment do
     belongs_to :card, Api.Card
 
     field :amount, :decimal
-    field :intermediaries, {:array, :map}, default: []
+
+    embeds_many :intermediaries, Api.Intermediary
 
     timestamps()
   end
@@ -16,9 +17,18 @@ defmodule Api.Payment do
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
+    intermediaries =
+      params[:intermediaries]
+      |> Enum.map(
+    fn intermediary ->
+      Api.Intermediary.changeset(%Api.Intermediary{}, params[:amount], intermediary)
+    end)
+
+
     struct
-    |> cast(params, [:amount, :intermediaries])
+    |> cast(params, [:amount])
     |> validate_required([:amount])
     |> cast_assoc(:card, required: true)
+    |> put_embed(:intermediaries, intermediaries)
   end
 end
