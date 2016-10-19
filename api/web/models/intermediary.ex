@@ -1,6 +1,7 @@
 defmodule Api.Intermediary do
   use Api.Web, :model
 
+
   embedded_schema do
     field :fee, :float
     field :flat, :float
@@ -22,8 +23,8 @@ defmodule Api.Intermediary do
     {result, _string} =
       payment_amount
       |> Decimal.new
-      |> Decimal.mult(Decimal.new(params[:fee]))
-      |> Decimal.add(Decimal.new(params[:flat]))
+      |> Decimal.mult(Decimal.new(params["fee"]))
+      |> Decimal.add(Decimal.new(params["flat"]))
       |> Decimal.to_string(:normal)
       |> Float.parse
 

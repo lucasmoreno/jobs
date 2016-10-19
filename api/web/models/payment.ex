@@ -18,17 +18,17 @@ defmodule Api.Payment do
   """
   def changeset(struct, params \\ %{}) do
     intermediaries =
-      params[:intermediaries]
+      params["intermediaries"]
       |> Enum.map(
     fn intermediary ->
-      Api.Intermediary.changeset(%Api.Intermediary{}, params[:amount], intermediary)
+      Api.Intermediary.changeset(%Api.Intermediary{}, params["amount"], intermediary)
     end)
 
 
     struct
     |> cast(params, [:amount])
     |> validate_required([:amount])
-    |> cast_assoc(:card, required: true)
+    |> put_assoc(:card, params["card"])
     |> put_embed(:intermediaries, intermediaries)
   end
 end

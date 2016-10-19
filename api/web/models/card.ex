@@ -34,4 +34,13 @@ defmodule Api.Card do
     |> validate_length(:expiration_year, is: 4)
     |> validate_format(:expiration_year, ~r/^[2-9]\d1[6-9]|[2-9]\d[2-9]\d$/)
   end
+
+  def find_by_number(number) do
+    query = from card in Api.Card,
+      where: card.number == ^number,
+      limit: 1,
+      select: card
+
+    Api.Repo.one query
+  end
 end
