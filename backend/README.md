@@ -1,34 +1,13 @@
 # Teste Back-end
-Nesse teste é preciso fazer uma API REST (JSON), com um endpoint para criar transação:
-
-#### [POST] /charge
-###### params:
-* card (map)
-    * holder
-    * number
-    * cvv
-    * expiration_month
-    * expiration_year
-* amount
-* intermediaries (opcional) (array)
-    * fee (opcional)
-    * flat (opcional)
-    * description (opcional)
-    
-###### return:
-* id
-* card_id
-* amount
-* intermediaries (array)
-    * fee
-    * flat
-    * amount
-    * description
-* inserted_at
-* updated_at
-
-### Input/Output
-Request
+Set up da API
+#### Com docker
+Ps.: Variáveis com "$" não são existem.
+* cd /path/to/backend
+* docker build .
+* docker tag $DOCKER_HASH kiik:latest
+* docker run -it -d -p 80:80 -p 4567:4567 --name kiik kiik:latest
+* Use essa extensão para facilitar a request :) https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo
+* Selecione POST e cole o json em "Raw payload"
 ```json
 {
   "amount": 10,
@@ -48,28 +27,11 @@ Request
   ]
 }
 ```
-Response
-```json
-{
-  "id": "a5fd213e-52e5-4dd0-b5df-85c3de190514",
-  "amount": 10,
-  "card_id": "1a348d1f-5028-45e4-ad66-a91a19cd5549",
-  "intermediaries": [
-    {
-      "fee": 0,
-      "flat": 5,
-      "amount": 5,
-      "description": "Tax of KiiK"
-    }
-  ]
-}
-```
+### Sem Docker
+* cd /path/to/backend
+* ruby app/app.rb
+* Use essa extensão para facilitar a request (ou qq outra similar) :) https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo
+* Selecione POST e cole o json em “Raw payload”
 
-#### Obs
-* Não é preciso persistir os dados em um banco
-* `intermediaries` é uma array com os intermediarios que receberam uma porcentagem (fee) e/ou valor fixo (flat) da transação
-* `amount` no retorno dos intermediarios precisa ser calculado sobre o `fee` e o `flat`
-* `card_id` e `id` no retorno podem ser randômicos
-* Ao terminar, abra um PR do repo principal e entraremos em contato
+## Créditos: Rode a aplicação e faça uma request GET no / :D
 
-## Boa sorte e que a força esteja com você !
