@@ -5,4 +5,5 @@ class Charge
 
   attr_accessor :amount, :card, :intermediaries
 
+  validates_presence_of :amount, :card, :intermediaries
 end
