@@ -8,6 +8,7 @@ gem 'roda'
 gem 'rake'
 
 group :test do
+  gem 'byebug'
   gem 'rspec', '~>3.5'
   gem 'rack-test', require: 'rack/test'
 end
