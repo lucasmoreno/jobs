@@ -1,0 +1,5 @@
+.bundle/
+.ruby-version
+
+# Mac files
+.DS_Store
