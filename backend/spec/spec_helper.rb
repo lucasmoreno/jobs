@@ -17,7 +17,6 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'bundler/setup'
-require 'rack/test'
 Bundler.require :default, :test
 
 require File.expand_path '../../app', __FILE__
