@@ -133,6 +133,27 @@ RSpec.describe '[POST] /charge' do
             expect(amounts).to match_array [1.4, 4]
           end
         end
+
+        context 'with no intermediaries' do
+          let(:json) do
+            {
+              "amount": 10,
+              "card": {
+                "holder": "KiiK Company",
+                "number": "4200000000000000",
+                "expiration_month": 12,
+                "expiration_year": 2017,
+                "cvv": "123"
+              }
+            }.to_json
+          end
+
+          subject(:response_intermediaries) { parsed_body["intermediaries"] }
+
+          it 'returns empty array' do
+            expect(response_intermediaries).to match_array []
+          end
+        end
       end
     end
   end

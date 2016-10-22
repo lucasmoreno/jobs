@@ -4,8 +4,8 @@ require 'json'
 require_relative 'schemas/charge_schema'
 
 class App < Roda
-  plugin :json
-  plugin :json_parser
+  plugin :json          # render json
+  plugin :json_parser   # parse request.body
 
   route do |r|
     r.post 'charge' do
@@ -17,7 +17,7 @@ class App < Roda
 
       amount = r.params["amount"]
 
-      intermediaries = r.params["intermediaries"].map do |intermediary|
+      intermediaries = r.params.fetch("intermediaries", []).map do |intermediary|
         intermediary['fee'] ||= 0
         intermediary['flat'] ||= 0
         intermediary["amount"] = amount * intermediary["fee"] + intermediary["flat"]
@@ -26,7 +26,7 @@ class App < Roda
 
       {
         id: SecureRandom.uuid,
-        amount: r.params["amount"],
+        amount: amount,
         card_id: SecureRandom.uuid,
         intermediaries: intermediaries
       }
