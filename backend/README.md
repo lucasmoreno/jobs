@@ -1,6 +1,15 @@
 # Teste Back-end
 Nesse teste é preciso fazer uma API REST (JSON), com um endpoint para criar transação:
 
+## Setup
+```console
+# Instale as dependências
+bundle install
+
+# Suba a aplicação
+bundle exec rackup
+```
+
 #### [POST] /charge
 ###### params:
 * card (map)
@@ -14,7 +23,7 @@ Nesse teste é preciso fazer uma API REST (JSON), com um endpoint para criar tra
     * fee (opcional)
     * flat (opcional)
     * description (opcional)
-    
+
 ###### return:
 * id
 * card_id
