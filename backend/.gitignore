@@ -1,0 +1,6 @@
+.bundle/
+.byebug_history
+.ruby-version
+
+# Mac files
+.DS_Store
