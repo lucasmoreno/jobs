@@ -10,17 +10,17 @@ class App < Roda
   route do |r|
     r.post 'charge' do
       begin
-        JSON::Validator.validate!(ChargeSchema::SCHEMA, r.params)
+        JSON::Validator.validate!(ChargeSchema::REQUEST, r.params)
       rescue JSON::Schema::ValidationError => e
         r.halt [400, {}, [e.message]]
       end
 
-      amount = r.params["amount"]
+      amount = r.params['amount']
 
-      intermediaries = r.params.fetch("intermediaries", []).map do |intermediary|
+      intermediaries = r.params.fetch('intermediaries', []).map do |intermediary|
         intermediary['fee'] ||= 0
         intermediary['flat'] ||= 0
-        intermediary["amount"] = amount * intermediary["fee"] + intermediary["flat"]
+        intermediary['amount'] = amount * intermediary['fee'] + intermediary['flat']
         intermediary
       end
 

@@ -1,184 +1,128 @@
 #frozen-string-literal: true
 require 'json'
+require File.expand_path '../../schemas/charge_schema', __FILE__
 
 RSpec.describe '[POST] /charge' do
   include Rack::Test::Methods
 
   let(:app) { App.app }
 
-  let(:json) do
+  let(:default_params) do
     {
-      "amount": 10,
-      "card": {
-        "holder": "KiiK Company",
-        "number": "4200000000000000",
-        "expiration_month": 12,
-        "expiration_year": 2017,
-        "cvv": "123"
+      amount: 10,
+      card: {
+        holder: 'KiiK Company',
+        number: '4200000000000000',
+        expiration_month: 12,
+        expiration_year: 2017,
+        cvv: 123
       },
-      "intermediaries": intermediaries
-    }.to_json
+      intermediaries: intermediaries
+    }
   end
 
-  let(:intermediaries) do
-    [
-      { "fee": 0, "flat": 5, "description": "Tax of KiiK" }
-    ]
-  end
+  let(:intermediaries) { [{ "fee": 0, "flat": 5, "description": "Tax of KiiK" }] }
+  let(:parsed_body) { JSON.parse last_response.body }
 
-  context 'with valid json request' do
-    before { post_json json }
+  context 'with valid json schema' do
+    before { post_json default_params }
 
-    context 'validating request' do
-      it 'should have Content-Type: application/json' do
-        expect(last_request.content_type).to eq 'application/json'
+    it 'responds with success' do
+      expect(last_response).to be_ok
+    end
+
+    it 'renders json' do
+      expect(last_response.content_type).to eq 'application/json'
+    end
+
+    context 'parsing response' do
+      it 'is validated with ChargeSchema::RESPONSE' do
+        expect(JSON::Validator.validate(ChargeSchema::RESPONSE, parsed_body)).to eq true
+      end
+
+      it 'keeps `amount` value from request' do
+        amount = default_params[:amount]
+        expect(parsed_body["amount"]).to eq amount
+      end
+
+      it 'keeps `fee`, `flat` and `description` values from request' do
+        request_intermediary = default_params[:intermediaries][0]
+        response_intermediary = parsed_body["intermediaries"][0]
+
+        expect(response_intermediary["fee"]).to eq request_intermediary[:fee]
+        expect(response_intermediary["flat"]).to eq request_intermediary[:flat]
+        expect(response_intermediary["description"]).to eq request_intermediary[:description]
       end
     end
 
-    context 'validating response' do
-      it 'responds ok' do
-        expect(last_response).to be_ok
-      end
+    context 'calculating intermediaries\' amount' do
+      context 'given one intermediary' do
+        subject { parsed_body["intermediaries"][0]['amount'] }
 
-      it 'responds with json' do
-        expect(last_response.content_type).to eq "application/json"
-      end
-    end
+        it { is_expected.to eq 5 }
 
-    context 'processing data' do
-      let(:parsed_body) { JSON.parse last_response.body }
+        context 'without fee attribute' do
+          let(:intermediaries) { [{ flat: 1 }] }
 
-      context 'with common default response' do
-        it 'responds with default structure' do
-          expect(parsed_body.keys).to include 'id', 'amount', 'card_id', 'intermediaries'
-          expect(parsed_body["intermediaries"]).to be_an_instance_of(Array)
+          it { is_expected.to eq 1 }
         end
 
-        it 'generates `id` key' do
-          expect(parsed_body["id"]).not_to eq nil
+        context 'without flat attribute' do
+          let(:intermediaries) { [{ fee: 0.2 }] }
+
+          it { is_expected.to eq 2 }
         end
 
-        it 'generates `card_id` key' do
-          expect(parsed_body["card_id"]).not_to eq nil
-        end
+        context 'with only description attribute' do
+          let(:intermediaries) { [{ description: 'Custom Tax' }] }
 
-        it 'keeps `amount` value from request' do
-          amount = JSON.parse(json)["amount"]
-
-          expect(parsed_body["amount"]).to eq amount
+          it { is_expected.to eq 0 }
         end
       end
 
-      context 'calculating intermediaries' do
-        context 'with only one intermediary' do
-          subject(:response_intermediary) { parsed_body["intermediaries"][0] }
-
-          it 'keeps values `fee`, `flat` and `description` from request' do
-            request_intermediary = JSON.parse(json)["intermediaries"][0]
-
-            expect(response_intermediary["fee"]).to eq request_intermediary["fee"]
-            expect(response_intermediary["flat"]).to eq request_intermediary["flat"]
-            expect(response_intermediary["description"]).to eq request_intermediary["description"]
-          end
-
-          it 'calculates intermediary\'s amount' do
-            expect(response_intermediary["amount"]).to eq 5
-          end
-
-          context 'when intermediary has no fee' do
-            let(:intermediaries) do
-              [ { "flat": 1 }]
-            end
-
-            it 'calculates intermediary\'s amount' do
-              expect(response_intermediary['amount']).to eq 1
-            end
-          end
-
-          context 'when intermediary has no flat' do
-            let(:intermediaries) do
-              [ { "fee": 0.2 } ]
-            end
-
-            it 'calculates intermediary\'s amount' do
-              expect(response_intermediary['amount']).to eq 2
-            end
-          end
-
-          context 'when intermediary\'s has only description' do
-            let(:intermediaries) do
-              [ { "description": "Random Tax Free" }]
-            end
-
-            it 'calculates intermediary\'s amount' do
-              expect(response_intermediary['amount']).to eq 0
-            end
-          end
+      context 'with more than one intermediary' do
+        let(:intermediaries) do
+          [
+            { "fee": 0.1, "flat": 0.4, "description": "Tax Random1" },
+            { "fee": 0.3, "flat": 1, "description": "Tax Random2" }
+          ]
         end
 
-        context 'with more than one intermediary' do
-          let(:intermediaries) do
-            [
-              { "fee": 0.1, "flat": 0.4, "description": "Tax Random1" },
-              { "fee": 0.3, "flat": 1, "description": "Tax Random2" }
-            ]
-          end
+        subject(:response_intermediaries) { parsed_body["intermediaries"] }
 
-          subject(:response_intermediaries) { parsed_body["intermediaries"] }
+        it 'calculates intermediaries\' amount' do
+          amounts = response_intermediaries.map { |h| h["amount"] }
 
-          it 'calculates intermediaries\' amount' do
-            amounts = response_intermediaries.map { |h| h["amount"] }
+          expect(amounts.count ).to eq 2
+          expect(amounts).to match_array [1.4, 4]
+        end
+      end
 
-            expect(amounts.count ).to eq 2
-            expect(amounts).to match_array [1.4, 4]
-          end
+      context 'with no intermediaries' do
+        before do
+          default_params.delete(:intermediaries)
+          post_json default_params
         end
 
-        context 'with no intermediaries' do
-          let(:json) do
-            {
-              "amount": 10,
-              "card": {
-                "holder": "KiiK Company",
-                "number": "4200000000000000",
-                "expiration_month": 12,
-                "expiration_year": 2017,
-                "cvv": "123"
-              }
-            }.to_json
-          end
+        subject { parsed_body["intermediaries"] }
 
-          subject(:response_intermediaries) { parsed_body["intermediaries"] }
-
-          it 'returns empty array' do
-            expect(response_intermediaries).to match_array []
-          end
-        end
+        it { is_expected.to match_array [] }
       end
     end
   end
 
-  context 'with invalid json request' do
-    let(:json) do
-      {
-        "card": {
-          "number": "4200000000000000",
-          "expiration_month": "12",
-          "expiration_year": "2017",
-          "cvv": "123"
-        },
-        "intermediaries": intermediaries
-      }.to_json
+  context 'with invalid json schema' do
+    before do
+      default_params.delete(:amount)
+      post_json default_params
     end
 
     it 'responds with bad request' do
-      post_json json
-
       expect(last_response.status).to eq 400
     end
   end
 
-  def post_json(json)
-    post '/charge', json, { "CONTENT_TYPE" => "application/json" }
+  def post_json(params)
+    post '/charge', params.to_json, { "CONTENT_TYPE" => "application/json" }
   end
 end
