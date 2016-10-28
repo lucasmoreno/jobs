@@ -27,11 +27,11 @@ Alguns endereços úteis:
 
  * [GitHub](https://www.github.com/paulohrpinheiro)
 
- * [Twitter](https://www.twitter.om/PauloHRPinheiro)
+ * [Twitter](https://www.twitter.com/PauloHRPinheiro)
 
  * [LinkedIn](https://br.linkedin.com/in/paulohrpinheiro)
 
- * [email](mailto://paulohrpinheiro@gmail.com)
+ * [email](mailto:paulohrpinheiro@gmail.com)
 
 
 ## Tecnologias usadas
@@ -83,7 +83,7 @@ source ~/paulohrpinheiro/bin/activate
 
     ```
 pip install pip --upgrade
-pip install -r requirements.txt
+pip install -r backend/restserver/requirements.txt
     ```
 
 
@@ -99,7 +99,7 @@ Para testar o sistema, basta executar o seguinte comando:
 
 Basta executar o seguinte comando, dentro da pasta [/restserver]:
 
-    backend/restserver/run_server.py
+    backend/restserver/run_server
 
 E então se poderá fazer requisições com um comando como:
 
