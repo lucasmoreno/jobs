@@ -1,0 +1,3 @@
+git+https://github.com/paulohrpinheiro/cherrypy.git@deprecated_cgi#egg=cherrypy
+pytest
+nose
