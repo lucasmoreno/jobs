@@ -1,7 +1,7 @@
 # Trabalhe no KiiK
 O KiiK é uma plaforma de pagamento, buscando sempre inovação e qualidade
 
-Teste do Paulo Henrique Rodrigues Pinheiro: [restverser](backend/restserver)
+Teste do Paulo Henrique Rodrigues Pinheiro: [restserver](backend/restserver)
 
 ### Tecnologias
 No KiiK temos varios produtos com tecnoligas diferentes:
