@@ -1,5 +1,9 @@
 # Trabalhe no KiiK
-O KiiK é uma plaforma de pagamento, buscando sempre inovação e qualidade
+O KiiK é uma Startup plaforma de pagamento, buscando sempre inovação e qualidade
+
+## Detalhes
+* Vagas são presenciais (estamos na Rua Maranhão 600, Higienópolis, São Paulo - SP)
+* CLT + Benefícios (VR + VT + plano de saúde e plano odontológico)
 
 Teste do Paulo Henrique Rodrigues Pinheiro: [restserver](backend/restserver)
 
@@ -14,15 +18,15 @@ No KiiK temos varios produtos com tecnoligas diferentes:
 * [Rails](http://rubyonrails.org/) - Admin da wallet
 
 ### Vagas
-Todos nossos devs são fullstack, tendo expertise em uma linguagem
-* 1 Junior (presencial)
-* 1 Pleno (presencial)
-* 0 Senior (presencial)
+Todos nossos devs são fullstack, tendo expertise em uma linguagem 
+* 1 Junior
+* 1 Pleno
+* 0 Senior
 
 ### Testes
 Para participar do processo é preciso fazer um fork desse repo e desenvolver pelo menos 1 dos testes presentes.
 * Linguagem e plataforma é escolha do desenvolvedor
-* É permitido usar framework/libs apenas open-source
+* É permitido usar qualquer linguagem/framework/lib, sendo open-source está ótimo!
 * É obrigatório ter README.md com instruções de como instalar dependencias e rodar a aplicação
 * Documentação no código é opcional (mas é um diferencial)
 
