@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+from app import server
+
+server.config_server()
+server.run_server()
