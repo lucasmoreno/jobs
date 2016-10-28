@@ -40,6 +40,24 @@ Desenvolvi o sistema em _Python3_, plataforma _Linux_, usando
 [CherryPy](http://www.cherrypy.org) como _framework_.
 
 
+## Estrutura dos arquivos
+
+```
+restserver/                # pasta base
+├── app                      # pasta com código do serviço
+│   ├── charge.py              # código para implementar o ponto /charge
+│   ├── __init__.py            # indicador de módulo Python
+│   └── server.py              # código para executar serviço
+├── __init__.py              # indicador de módulo Python
+├── README.md                # este arquivo
+├── requirements.txt         # arquivo contendo as dependências
+├── run_server               # comando executável para subir o serviço
+└── tests                    # pasta com código para testes
+    ├── __init__.py            # indicador de módulo Python
+    └── test_url_charge.py     # testes para o ponto /charge
+
+```
+
 ## Configuração inicial
 
 Em primeiro lugar, é preciso ter o Python3 instalado na máquina. Os pacotes
