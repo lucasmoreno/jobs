@@ -15,7 +15,7 @@
 ###Após seguir as instruções de como [instalar e subir o GlassFish](https://glassfish.java.net/download.html)
 
 1. Entrar no console de configuração: http://localhost:4848
-2. No menu do lado direito entrar em **_Applications_**  
+2. No menu do lado esquerdo entrar em **_Applications_**  
 (obs: Em **Applications** estão todos os deployments feitos)
 3. Na tabela **Deployed Applications** clicar no botão **_Deploy_**
 4. Na página **Deploy Applications or Modules** clicar em **_Choose File_**
