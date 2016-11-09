@@ -5,6 +5,8 @@
 - [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) 
 - [GlassFish 4](https://glassfish.java.net/download.html)
 
+(obs: Para fazer o teste sem a necessidade de configurar o sistema, vá direto para o tópico **Testando a aplicação**)
+
 ##Configuração
 
 - Baixar e instalar o [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) 
@@ -75,5 +77,5 @@ A resposta será:
   ]
 }
 ```
-*Obs: as propriedades "id" e "card_id" não serão igual entre um request e outro, porque esses ids são gerados usando dados dos cartão mais data e hora.*
+*Obs: as propriedades "id" e "card_id" não serão igual entre um request e outro, porque esses ids são gerados usando dados dos cartão combinados com data e hora.*
 
