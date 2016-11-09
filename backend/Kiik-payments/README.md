@@ -30,6 +30,8 @@
 - Para o teste sem precisar configurar o servidor e fazer o deploy: existe uma instância desta aplicação no seguinte endereço **http://35.160.30.34:8080/Kiik-payments/charge**
 
 ###Para testar a aplicação pode se fazer uma requisição POST usando [Postman](https://www.getpostman.com) ou [SoapUI](https://www.soapui.org):
+
+Request
 ```
 {
   "amount": 30,
@@ -55,7 +57,7 @@
 }
 ```
 
-A resposta será:
+Response
 ```
 {
   "id": "NDIwMDAwMDAwMDAwMDAwMDIwMTYtMTEtMDlUMTI6NDM6NDIuMTQy",
