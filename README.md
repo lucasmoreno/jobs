@@ -18,7 +18,7 @@ No KiiK temos varios produtos com tecnoligas diferentes:
 ### Vagas
 Todos nossos devs são fullstack, tendo expertise em uma linguagem 
 * 1 Junior
-* 1 Pleno
+* 0 Pleno
 * 0 Senior
 
 ### Testes
