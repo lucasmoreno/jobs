@@ -1,11 +1,11 @@
 # Teste Mobile
-Nesse teste é preciso criar um app com 3 telas, usando a API do [KiiK](http://docs.kiik.com/), usando o token de DEMO (`B31DCE74-E768-43ED-86DA-85501612548F`)
+Nesse teste é preciso criar um app com 3 telas, usando a API do [KiiK](http://docs.kiik.com/), com o token de DEMO (`B31DCE74-E768-43ED-86DA-85501612548F`)
 
 ## Criar transação
 Criar transação com os campos:
 
  - `amount` - Valor transacionado
- - `installments_number` - Numero de parcelas
+ - `installments_number` - Número de parcelas
  - `card_id` - Cartão que será transacionado
 
 [API](http://docs.kiik.com/docs/charges-2)
