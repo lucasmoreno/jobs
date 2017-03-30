@@ -17,8 +17,8 @@ No KiiK temos varios produtos com tecnoligas diferentes:
 
 ### Vagas
 Todos nossos devs são fullstack, tendo expertise em uma linguagem 
-* 1 Junior
-* 0 Pleno
+* 0 Junior
+* 1 Pleno
 * 0 Senior
 
 ### Testes
@@ -27,6 +27,7 @@ Para participar do processo é preciso fazer um fork desse repo e desenvolver pe
 * É permitido usar qualquer linguagem/framework/lib, sendo open-source está ótimo!
 * É obrigatório ter README.md com instruções de como instalar dependencias e rodar a aplicação
 * Documentação no código é opcional (mas é um diferencial)
+* Não se esqueça de colocar no README um canal para comunicacão (e-mail, celular, skype ou telegram)
 
 ### Links
 * [KiiK Site](https://www.kiik.com/)
