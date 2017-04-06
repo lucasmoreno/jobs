@@ -3,6 +3,7 @@ O KiiK é uma Startup plaforma de pagamento, buscando sempre inovação e qualid
 
 ## Detalhes
 * Vagas são presenciais (estamos na Rua Maranhão 600, Higienópolis, São Paulo - SP)
+* Ambiente descontraido (incubadora com outras startups)
 * CLT + Benefícios (VR + VT + plano de saúde e plano odontológico)
 
 ### Tecnologias
