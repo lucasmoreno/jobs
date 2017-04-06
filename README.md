@@ -6,7 +6,7 @@ O KiiK é uma Startup plaforma de pagamento, buscando sempre inovação e qualid
 * CLT + Benefícios (VR + VT + plano de saúde e plano odontológico)
 
 ### Tecnologias
-No KiiK temos varios produtos com tecnoligas diferentes:
+No KiiK temos varios produtos com tecnologias diferentes:
 
 * [Elixir](https://elixir.org) - Core do sistema
 * [Phoenix](https://phoenixframework.org) - Admin do core
