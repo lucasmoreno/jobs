@@ -1,5 +1,5 @@
-# Trabalhe no KiiK
-O KiiK é uma Startup plaforma de pagamento, buscando sempre inovação e qualidade
+# Trabalhe no Paggi
+O Paggi é uma Startup plaforma de pagamento, buscando sempre inovação e qualidade
 
 ## Detalhes
 * Vagas são presenciais (estamos na Rua Maranhão 600, Higienópolis, São Paulo - SP)
@@ -7,7 +7,7 @@ O KiiK é uma Startup plaforma de pagamento, buscando sempre inovação e qualid
 * CLT + Benefícios (VR + VT + plano de saúde e plano odontológico)
 
 ### Tecnologias
-No KiiK temos varios produtos com tecnologias diferentes:
+No Paggi temos varios produtos com tecnologias diferentes:
 
 * [Elixir](https://elixir.org) - Core do sistema
 * [Phoenix](https://phoenixframework.org) - Admin do core
@@ -31,7 +31,7 @@ Para participar do processo é preciso fazer um fork desse repo e desenvolver pe
 * Não se esqueça de colocar no README um canal para comunicacão (e-mail, celular, skype ou telegram)
 
 ### Links
-* [KiiK Site](https://www.kiik.com/)
-* [KiiK Docs](http://docs.kiik.com/)
-* [KiiK Android](https://play.google.com/store/apps/details?id=br.com.kiik_pay)
-* [KiiK iOS](https://itunes.apple.com/br/app/kiik/id687508608?mt=8)
+* [Paggi Site](https://www.paggi.com/)
+* [Paggi Docs](http://docs.paggi.com/)
+* [Paggi Android](https://play.google.com/store/apps/details?id=br.com.kiik_pay)
+* [Paggi iOS](https://itunes.apple.com/br/app/kiik/id687508608?mt=8)
