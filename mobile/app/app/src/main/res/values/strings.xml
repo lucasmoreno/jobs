@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Teste Paggi</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--navegacao-->
+    <string name="screen_dashboard">Dashboard</string>
+    <string name="screen_transacao">Transações</string>
+    <string name="screen_pagamento">Pagamentos</string>
+    <string name="screen_sobre"></string>
+
+    <!--Itens menu-->
+    <string name="menu_criar_transacao">Nova transação</string>
+    <string name="menu_transacao">Transações</string>
+    <string name="menu_pagamentos">Pagamentos</string>
+    <string name="menu_sobre">Sobre o app</string>
+
+    <!--Button string-->
+    <string name="btn_detalhes">VER DETALHES</string>
+    <string name="btn_nova_transacao">CRIAR NOVA</string>
+
+    <!--Cards Dash-->
+    <string name="dash_transacao_title">Transações</string>
+    <string name="dash_transacao_desc">total transacionado R$ {var}</string>
+    <string name="dash_pagamentos_title">Pagamentos</string>
+    <string name="dash_pagamentos_desc">total compensado R$ {var}</string>
+    <string name="dash_nova_transacao_title">Nova transação</string>
+    <string name="dash_nova_transacao_desc">cadastre uma nova transação</string>
+
+    <string name="about_title">Sobre o teste da Paggi</string>
+    <string name="about_version">Versão {var}</string>
+    <string name="about_rights">\@ {var} Teste Paggi\ntodos os direitos reservados.</string>
+
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E51121</color>
+    <color name="colorPrimaryDark">#CD222F</color>
+    <color name="colorAccent">#FFFFFF</color>
+
+    <color name="white">@color/colorAccent</color>
+
+    <color name="bg">#F5F5F5</color>
+    <color name="bg_card">#F5F5F5</color>
+
+    <color name="red">#CD222F</color>
+
+</resources>
