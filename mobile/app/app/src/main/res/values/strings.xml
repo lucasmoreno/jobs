@@ -6,10 +6,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_fechar">fechar</string>
 
     <!--navegacao-->
     <string name="screen_dashboard">Dashboard</string>
     <string name="screen_transacao">Transações</string>
+    <string name="screen_nova_transacao">Nova transação</string>
     <string name="screen_pagamento">Pagamentos</string>
     <string name="screen_sobre"></string>
 
@@ -25,9 +27,9 @@
 
     <!--Cards Dash-->
     <string name="dash_transacao_title">Transações</string>
-    <string name="dash_transacao_desc">total transacionado R$ {var}</string>
+    <string name="dash_transacao_desc">veja todas as suas transações</string>
     <string name="dash_pagamentos_title">Pagamentos</string>
-    <string name="dash_pagamentos_desc">total compensado R$ {var}</string>
+    <string name="dash_pagamentos_desc">confira todos seus pagamentos</string>
     <string name="dash_nova_transacao_title">Nova transação</string>
     <string name="dash_nova_transacao_desc">cadastre uma nova transação</string>
 
@@ -35,4 +37,22 @@
     <string name="about_version">Versão {var}</string>
     <string name="about_rights">\@ {var} Teste Paggi\ntodos os direitos reservados.</string>
 
+    <!--common strings-->
+    <string name="lbl_valor_total">valor da transação</string>
+    <string name="lbl_total_parcelas">parcelamento</string>
+    <string name="amount_format">R$ 0,00</string>
+    <string name="parcela_default">à vista</string>
+    <string name="parcela_2x">2 vezes</string>
+    <string name="parcela_3x">3 vezes</string>
+    <string name="parcela_4x">4 vezes</string>
+    <string name="parcela_5x">5 vezes</string>
+    <string name="parcela_6x">6 vezes</string>
+    <string name="parcela_7x">7 vezes</string>
+    <string name="parcela_8x">8 vezes</string>
+    <string name="parcela_9x">9 vezes</string>
+    <string name="parcela_10x">10 vezes</string>
+    <string name="parcela_11x">11 vezes</string>
+    <string name="parcela_12x">12 vezes</string>
+
 </resources>
+

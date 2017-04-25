@@ -9,7 +9,4 @@ public interface BasePresenter {
 
     void init();
 
-    void tryAgain();
-
-    void goBack();
 }

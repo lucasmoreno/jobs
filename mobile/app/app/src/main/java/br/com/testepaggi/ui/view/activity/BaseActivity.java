@@ -3,6 +3,9 @@ package br.com.testepaggi.ui.view.activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -79,11 +82,26 @@ abstract class BaseActivity extends AppCompatActivity {
 
         setTitle(resId);
 
+        Drawable icon;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            icon = getDrawable( R.drawable.ic_check_white_24dp );
+        }else{
+            icon = getResources().getDrawable( R.drawable.ic_check_white_24dp );
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            icon.setColorFilter(getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+        }else{
+            icon.setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+        }
+
+        toolbar.setNavigationIcon(icon);
+
         setSupportActionBar(toolbar);
 
         this.actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(false);
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
     }

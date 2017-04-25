@@ -50,7 +50,7 @@ public class PagamentoServiceImpl implements PagamentosService {
                         pagamentos.add(new Pagamento(responseVO));
                     }
 
-                    listener.onSuccess(pagamentos);
+                    listener.onPagamentoSuccess(pagamentos);
 
                 }else{
                     Log.e("Pagamento Error","Response Error 4xx/5xx");

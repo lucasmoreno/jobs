@@ -50,7 +50,7 @@ public class TransacoesServiceImpl implements TransacoesService {
                         transacoes.add(new Transacao(responseVO));
                     }
 
-                    listener.onSuccess(transacoes);
+                    listener.onTransacaoSuccess(transacoes);
 
                 }else{
                     Log.e("Transacao Error","Response Error 4xx/5xx");

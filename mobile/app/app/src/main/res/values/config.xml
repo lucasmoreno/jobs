@@ -5,6 +5,7 @@
     <string name="phone_number">11993927242</string>
     <string name="email_addres">paulovitorns@gmail.com</string>
     <string name="token">B31DCE74-E768-43ED-86DA-85501612548F</string>
+    <string name="card_id">card_6d9c5ff8-b72e-4283-8a55-79cdb7f8a508</string>
     <integer name="default_api_timeout">45</integer>
     <integer name="default_anim_duration">250</integer>
 

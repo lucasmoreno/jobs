@@ -32,16 +32,6 @@ public class AboutPresenterImpl implements AboutPresenter, AboutResultListener {
     }
 
     @Override
-    public void tryAgain() {
-
-    }
-
-    @Override
-    public void goBack() {
-        this.view.onBackPressed();
-    }
-
-    @Override
     public void setCurrentYear(String date) {
         String dateInfo = StringUtils.setValue(view.getContext().getString(R.string.about_rights), date);
         this.view.showCurrentYear(dateInfo);

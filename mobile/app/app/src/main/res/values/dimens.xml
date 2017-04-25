@@ -13,6 +13,7 @@
     <dimen name="font_normal">14dp</dimen>
 
     <!--margin-->
+    <dimen name="margim_micro">4dp</dimen>
     <dimen name="margim_small">8dp</dimen>
     <dimen name="margim_default">16dp</dimen>
     <dimen name="margim_big">32dp</dimen>
@@ -20,5 +21,7 @@
 
     <!--UI Elem-->
     <dimen name="button_size">48dp</dimen>
+    <dimen name="edt_box_size">48dp</dimen>
+    <dimen name="edt_size">40dp</dimen>
 
 </resources>

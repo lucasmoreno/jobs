@@ -11,6 +11,6 @@ import br.com.testepaggi.model.Pagamento;
 
 public interface PagamentosFinishedListener extends BaseCommonListener {
 
-    void onSuccess(List<Pagamento> pagamentos);
+    void onPagamentoSuccess(List<Pagamento> pagamentos);
 
 }

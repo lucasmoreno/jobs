@@ -11,6 +11,6 @@ import br.com.testepaggi.model.Transacao;
 
 public interface TransacaoFinishedListener extends BaseCommonListener {
 
-    void onSuccess(List<Transacao> transacaoList);
+    void onTransacaoSuccess(List<Transacao> transacaoList);
 
 }

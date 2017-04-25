@@ -47,4 +47,5 @@ public interface ServiceApi {
             @Path("start")      String start,
             @Path("end")        String end
     );
+
 }

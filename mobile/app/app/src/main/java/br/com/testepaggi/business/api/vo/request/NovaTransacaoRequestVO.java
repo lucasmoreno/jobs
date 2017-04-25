@@ -9,6 +9,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class NovaTransacaoRequestVO {
     @SerializedName("amount")               public int      valor;
-    @SerializedName("card_id")              public String   cardIs;
+    @SerializedName("card_id")              public String   cardId;
     @SerializedName("installments_number")  public String   parcelas;
 }
