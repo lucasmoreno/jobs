@@ -19,7 +19,7 @@ No Paggi temos varios produtos com tecnologias diferentes:
 ### Vagas
 Todos nossos devs são fullstack, tendo expertise em uma linguagem 
 * 0 Junior
-* 1 Pleno
+* 2 Pleno
 * 0 Senior
 
 ### Testes
