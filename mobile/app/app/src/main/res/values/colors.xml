@@ -10,5 +10,8 @@
     <color name="bg_card">#F5F5F5</color>
 
     <color name="red">#CD222F</color>
+    <color name="grey">#333333</color>
+    <color name="green">#007f00</color>
+    <color name="yellow">#b2b200</color>
 
 </resources>

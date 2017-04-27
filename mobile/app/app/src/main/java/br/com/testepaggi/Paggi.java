@@ -26,10 +26,28 @@ public class Paggi extends MultiDexApplication {
         context = getApplicationContext();
     }
 
+    /**
+     * Recupera o Context da Aplicação
+     * <p>
+     *     Metodo usado para recuperar o context geral da aplicação
+     * </p>
+     *
+     * @return      Context  context da aplicação
+     * @see         Context
+     */
     public static Context getContext() {
         return context;
     }
 
+
+    /**
+     * Seta o Context da Aplicação
+     * <p>
+     *     Metodo usado para setar o context geral da aplicação
+     * </p>
+     *
+     * @param   context context da aplicação
+     */
     public static void setContext(Context context) {
         Paggi.context = context;
     }

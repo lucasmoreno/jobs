@@ -1,5 +1,6 @@
 package br.com.testepaggi.business.api;
 
+import android.util.Base64;
 import android.util.Log;
 
 import com.squareup.okhttp.Interceptor;
@@ -55,7 +56,11 @@ public class ApiClient extends OkHttpClient {
                 Request.Builder builder = original.newBuilder();
                 builder.addHeader("Content-Type", "application/json; charset=UTF-8");
 
-                builder.addHeader("Authorization", Paggi.getContext().getString(R.string.token));
+                String token = Paggi.getContext().getString(R.string.token);
+
+                String basicAuth = "Basic " + Base64.encodeToString(token.getBytes(), Base64.NO_WRAP);
+
+                builder.addHeader("Authorization", basicAuth);
 
                 builder.method(original.method(), original.body());
 

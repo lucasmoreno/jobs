@@ -14,5 +14,5 @@ public class TransacaoItemResponseVO {
     @SerializedName("status")                   public String   status;
     @SerializedName("amount")                   public int      valor;
     @SerializedName("expected_compensation")    public Date     compensacao;
-    @SerializedName("created_at")               public String   criacao;
+    @SerializedName("created")                  public Date     criacao;
 }

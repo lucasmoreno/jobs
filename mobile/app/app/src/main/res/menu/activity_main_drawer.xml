@@ -15,7 +15,7 @@
         android:title="@string/menu_criar_transacao" />
     <item
         android:id="@+id/nav_about"
-        android:icon="@android:drawable/ic_menu_info_details"
+        android:icon="@drawable/ic_info_outline_white_24dp"
         android:title="@string/menu_sobre" />
 
 </menu>

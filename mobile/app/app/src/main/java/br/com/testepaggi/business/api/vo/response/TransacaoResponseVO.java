@@ -10,6 +10,6 @@ import java.util.List;
  */
 
 public class TransacaoResponseVO {
-    @SerializedName("total") public     int                             total;
-    @SerializedName("result") public    List<TransacaoItemResponseVO>   result;
+    @SerializedName("total")    public  int                             total;
+    @SerializedName("result")   public  List<TransacaoItemResponseVO>   result;
 }

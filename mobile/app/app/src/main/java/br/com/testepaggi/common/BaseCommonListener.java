@@ -1,16 +1,12 @@
 package br.com.testepaggi.common;
 
+import br.com.testepaggi.model.ApiResponseType;
+
 /**
  * © Copyright 2017.
  * Autor : Paulo Sales - paulovitorns@gmail.com
  */
 
-public interface BaseCommonListener {
-
-//    void onError(ApiResponse error);
-//
-//    void onConnectionFail(ApiResponse error);
-//
-//    void onServerNotRespond(ApiResponse error);
-
+public interface BaseCommonListener extends OnApiErrorResponseListener {
+    void onError(ApiResponseType error);
 }

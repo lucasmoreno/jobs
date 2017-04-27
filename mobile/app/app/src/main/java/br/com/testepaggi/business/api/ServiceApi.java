@@ -1,6 +1,7 @@
 package br.com.testepaggi.business.api;
 
 import br.com.testepaggi.business.api.vo.request.NovaTransacaoRequestVO;
+import br.com.testepaggi.business.api.vo.response.CardsResponseVO;
 import br.com.testepaggi.business.api.vo.response.NovaTransacaoResponseVO;
 import br.com.testepaggi.business.api.vo.response.PagamentoResponseVO;
 import br.com.testepaggi.business.api.vo.response.TransacaoResponseVO;
@@ -9,6 +10,7 @@ import retrofit.http.Body;
 import retrofit.http.GET;
 import retrofit.http.POST;
 import retrofit.http.Path;
+import retrofit.http.Query;
 
 /**
  * © Copyright 2017.
@@ -20,32 +22,25 @@ public interface ServiceApi {
     @POST("charges")
     Call<NovaTransacaoResponseVO> addCharge(@Body NovaTransacaoRequestVO requestVO);
 
-    @GET("getcharges/?page={page}&page_size={pageSize}")
+    @GET("charges/")
     Call<TransacaoResponseVO> transacoes(
-            @Path("page")       int page,
-            @Path("pageSize")   int pageSize
+            @Query("page")          int page,
+            @Query("page_size")     int pageSize,
+            @Query("start_date")    String start,
+            @Query("end_date")      String end
     );
 
-    @GET("getcharges/?page={page}&page_size={pageSize}&start_date={start}&end_date={end}")
-    Call<TransacaoResponseVO> transacoes(
-            @Path("page")       int page,
-            @Path("pageSize")   int pageSize,
-            @Path("start")      String start,
-            @Path("end")        String end
-    );
-
-    @GET("payments/?page={page}&page_size={pageSize}")
+    @GET("payments/")
     Call<PagamentoResponseVO> pagamentos(
-            @Path("page")       int page,
-            @Path("pageSize")   int pageSize
+            @Query("page")          int page,
+            @Query("page_size")     int pageSize,
+            @Query("start_date")    String start,
+            @Query("end_date")      String end
     );
 
-    @GET("getcharges/?page={page}&page_size={pageSize}&start_date={start}&end_date={end}")
-    Call<PagamentoResponseVO> pagamentos(
-            @Path("page")       int page,
-            @Path("pageSize")   int pageSize,
-            @Path("start")      String start,
-            @Path("end")        String end
+    @GET("cards")
+    Call<CardsResponseVO> cards(
+            @Query("page")          int page,
+            @Query("page_size")     int pageSize
     );
-
 }

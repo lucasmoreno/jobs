@@ -11,7 +11,8 @@ import java.util.Date;
 
 public class PagamentoItemResponseVO {
 
-    @SerializedName("status")           public String   status;
-    @SerializedName("amount")           public int      valor;
-    @SerializedName("compensated_at")   public Date     compensacao;
+    @SerializedName("status")                   public String   status;
+    @SerializedName("amount")                   public int      valor;
+    @SerializedName("compensated_at")           public Date     compensado;
+    @SerializedName("expected_compensation")    public Date     compensacao;
 }

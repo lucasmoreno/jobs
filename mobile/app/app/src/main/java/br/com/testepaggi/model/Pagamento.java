@@ -14,21 +14,28 @@ public class Pagamento implements Serializable{
 
     public static String KEY = Pagamento.class.getSimpleName();
 
-    private String  status;
+    private StatusItens status;
     private int     valor;
+    private Date    compensado;
     private Date    compensacao;
 
     public Pagamento(PagamentoItemResponseVO responseVO) {
-        this.status         = responseVO.status;
         this.valor          = responseVO.valor;
+        this.compensado     = responseVO.compensado;
         this.compensacao    = responseVO.compensacao;
+
+        this.setStatusItem(responseVO.status);
     }
 
-    public String getStatus() {
+    private void setStatusItem(String status){
+        this.status = StatusItens.getItemStatus(status);
+    }
+
+    public StatusItens getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusItens status) {
         this.status = status;
     }
 
@@ -38,6 +45,14 @@ public class Pagamento implements Serializable{
 
     public void setValor(int valor) {
         this.valor = valor;
+    }
+
+    public Date getCompensado() {
+        return compensado;
+    }
+
+    public void setCompensado(Date compensado) {
+        this.compensado = compensado;
     }
 
     public Date getCompensacao() {

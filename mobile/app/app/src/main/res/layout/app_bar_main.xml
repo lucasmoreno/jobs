@@ -11,4 +11,6 @@
 
     <include layout="@layout/content_main" />
 
+    <include layout="@layout/view_api_response_errors"/>
+
 </LinearLayout>

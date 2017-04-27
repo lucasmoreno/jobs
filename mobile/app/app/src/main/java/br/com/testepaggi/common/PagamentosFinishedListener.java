@@ -1,8 +1,6 @@
 package br.com.testepaggi.common;
 
-import java.util.List;
-
-import br.com.testepaggi.model.Pagamento;
+import br.com.testepaggi.model.Pagamentos;
 
 /**
  * © Copyright 2017.
@@ -11,6 +9,6 @@ import br.com.testepaggi.model.Pagamento;
 
 public interface PagamentosFinishedListener extends BaseCommonListener {
 
-    void onPagamentoSuccess(List<Pagamento> pagamentos);
+    void onPagamentoSuccess(Pagamentos pagamentos);
 
 }

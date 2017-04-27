@@ -1,8 +1,6 @@
 package br.com.testepaggi.common;
 
-import java.util.List;
-
-import br.com.testepaggi.model.Transacao;
+import br.com.testepaggi.model.Transacoes;
 
 /**
  * © Copyright 2017.
@@ -11,6 +9,6 @@ import br.com.testepaggi.model.Transacao;
 
 public interface TransacaoFinishedListener extends BaseCommonListener {
 
-    void onTransacaoSuccess(List<Transacao> transacaoList);
+    void onTransacaoSuccess(Transacoes transacoes);
 
 }

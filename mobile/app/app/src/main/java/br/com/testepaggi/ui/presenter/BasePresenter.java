@@ -9,4 +9,5 @@ public interface BasePresenter {
 
     void init();
 
+    void tentarNovament();
 }

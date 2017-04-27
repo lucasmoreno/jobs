@@ -4,30 +4,44 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.NestedScrollView;
+import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import br.com.testepaggi.Paggi;
 import br.com.testepaggi.R;
+import br.com.testepaggi.model.ApiResponseType;
 import br.com.testepaggi.ui.adapter.ParcelasAdapter;
+import br.com.testepaggi.ui.presenter.NovaTransacaoPresenter;
+import br.com.testepaggi.ui.presenter.impl.NovaTransacaoPresenterImpl;
+import br.com.testepaggi.ui.view.NovaTransacaoView;
+import br.com.testepaggi.ui.view.component.CurrencyFormat;
+import br.com.testepaggi.util.Utils;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * © Copyright 2017.
  * Autor : Paulo Sales - paulovitorns@gmail.com
  */
 
-public class NovaTransacaoActivity extends BaseActivity {
+public class NovaTransacaoActivity extends BaseActivity implements NovaTransacaoView {
 
-    @Bind(R.id.spParcelas)    Spinner spParcelas;
+    @Bind(R.id.spParcelas)      Spinner     spParcelas;
+    @Bind(R.id.edtValor)        EditText    edtValor;
+    @Bind(R.id.txValorError)    TextView    txValorError;
+    @Bind(R.id.scrollView)      NestedScrollView scrollView;
+
+    private NovaTransacaoPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +52,25 @@ public class NovaTransacaoActivity extends BaseActivity {
 
         setupNavigateActionBarModal(R.string.screen_nova_transacao);
 
+        presenter = new NovaTransacaoPresenterImpl(this);
+
         String[] parcelas = getResources().getStringArray(R.array.parcelas);
 
         RelativeLayout.LayoutParams lp1 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         spParcelas.setLayoutParams(lp1);
         spParcelas.setAdapter(new ParcelasAdapter(this, parcelas));
+
+        edtValor.addTextChangedListener(new CurrencyFormat(edtValor));
+    }
+
+    @Override
+    protected void onResume() {
+        if(Utils.isNetworkAvailable()){
+            scrollView.setVisibility(View.VISIBLE);
+            emptyStateContainer.setVisibility(View.GONE);
+            presenter.getCards();
+        }
+        super.onResume();
     }
 
     @Override
@@ -71,7 +99,7 @@ public class NovaTransacaoActivity extends BaseActivity {
         }
 
         if(item.getItemId() == android.R.id.home){
-            //TODO:: implementar a rotina para inserir uma nova transação
+            presenter.enviaNovaTransacao(edtValor.getText().toString(), spParcelas.getSelectedItemPosition());
         }
 
         return true;
@@ -79,4 +107,69 @@ public class NovaTransacaoActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {}
+
+    /**
+     * Confirmação
+     * <p>
+     *     Metodo usado para exibir a mensagem de que o valor é menor ou igual a zero
+     * </p>
+     *
+     */
+    @Override
+    public void alertaValorZerado() {
+        Toast.makeText(this, getString(R.string.novatransacao_valor_zerado), Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * Confirmação
+     * <p>
+     *     Metodo usado para exibir a mensagem de sucesso caso a transação seja inserida com sucesso
+     * </p>
+     *
+     */
+    @Override
+    public void showConfirmacao() {
+        Toast.makeText(this, getString(R.string.novatransacao_sucesso), Toast.LENGTH_LONG).show();
+
+        finish();
+        overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_top);
+    }
+
+    /**
+     * Tentar novamente
+     * <p>
+     *     Metodo usado para reenviar uma ação após um erro do app
+     * </p>
+     *
+     */
+    @Nullable
+    @OnClick(R.id.btnReTry)
+    public void tentarNovamente(){
+        emptyStateContainer.setVisibility(View.GONE);
+        scrollView.setVisibility(View.VISIBLE);
+        presenter.tentarNovament();
+    }
+
+    /**
+     * Limpar e tentar novamente
+     * <p>
+     *     Metodo usado para limpar e inserir novos dados da nova transacao
+     * </p>
+     *
+     */
+    @Nullable
+    @OnClick(R.id.btnNovaTransacao)
+    public void novaTentativa(){
+        emptyStateContainer.setVisibility(View.GONE);
+        scrollView.setVisibility(View.VISIBLE);
+        spParcelas.setSelection(0);
+        edtValor.setText("0.00");
+        edtValor.requestFocus();
+    }
+
+    @Override
+    public void showEptyState(ApiResponseType error) {
+        scrollView.setVisibility(View.GONE);
+        super.showEptyState(error);
+    }
 }

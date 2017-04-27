@@ -3,6 +3,8 @@ package br.com.testepaggi.ui.view;
 import android.content.Context;
 import android.content.Intent;
 
+import br.com.testepaggi.model.ApiResponseType;
+
 /**
  * © Copyright 2017.
  * Autor : Paulo Sales - paulovitorns@gmail.com
@@ -20,7 +22,7 @@ public interface BaseView {
 
     void hideLoading();
 
-//    void showDialogError(ApiResponse error);
+    void showEptyState(ApiResponseType error);
 
     Context getContext();
 
