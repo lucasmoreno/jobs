@@ -21,7 +21,7 @@ No Paggi temos varios produtos com tecnologias diferentes:
 Todos nossos devs são fullstack, tendo expertise em uma linguagem 
 * 0 Junior
 * 2 Pleno
-* 0 Senior
+* 2 Senior
 
 ### Testes
 Para participar do processo é preciso fazer um fork desse repo e desenvolver pelo menos 1 dos testes presentes.
