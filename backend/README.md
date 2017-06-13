@@ -1,3 +1,27 @@
+#Tecnologias utilizadas:
+
+- Java 1.8
+- Spring boot
+- Spring rest
+- Maven
+- Swagger
+
+#Executando o projeto
+
+- Basta executar a classe InitAPI localizada no pacote br.com.paggi
+
+#Testando a aplicacao
+
+- Acesse a documentacao do swagger, disponivel em:
+http://localhost:8080/swagger-ui.html
+
+#Contato
+- Luiz Antonio de Moura Filho
+- luiz64@hotmail.com
+- 14 998677057 / 11 954121630
+
+------------------------------------------------------------------------------------------------
+
 # Teste Back-end
 Nesse teste é preciso fazer uma API REST (JSON), com um endpoint para criar transação:
 
