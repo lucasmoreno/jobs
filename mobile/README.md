@@ -17,7 +17,7 @@ E-mail: rafael.felipe1989@gmail.com
 ## Navegação Activties
 
 * SplashScreenActivity - Tela de Splash com o logo Paggi.
-* MainActivity - Tela principal, contém dois fragments (Transações e Pagamentos) que são alternados por meio de Button..
+* MainActivity - Tela principal, contém dois fragments (Transações e Pagamentos) que são alternados por meio de BottomNavigationView..
 * AmountValueActivity - Tela que simula visualmente uma maquina de cartão, onde o usuário informa o valor do montante.
 * ConfirmTransactionActivity - Tela onde recebe os dados do Cliente, Montante, Id do cartão e número de parcelas. (Os ids estão inseridos diretamente nos campos de texto, apenas pra simulação.)
                                Essa tela envia ao webservice os dados para uma nova transação.
