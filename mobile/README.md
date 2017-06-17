@@ -9,10 +9,10 @@ E-mail: rafael.felipe1989@gmail.com
 
 ## Bibliotecas
 
-[Retrofit2]()
-[Retrofit2:converter-gson]()
-[Android Scroll Endless]() Biblioteca criada por mim para uso de Scroll em Recycler com paginação.
-[Android Joda Time]()
+[Retrofit2](http://square.github.io/retrofit/) Um cliente HTTP
+[Retrofit2:converter-gson](http://square.github.io/retrofit/) Parser json para Retrofit
+[Android Scroll Endless](https://github.com/rafaelcrz/android_scroll_endless) Biblioteca criada por mim para uso de Scroll com paginação em Recycler.
+[Android Joda Time](https://github.com/dlew/joda-time-android) Poderosa library para manipulação de datas/horas
 
 ## Navegação Activties
 
@@ -25,8 +25,8 @@ E-mail: rafael.felipe1989@gmail.com
 							   
 ## Navegação Fragments
 
-TransactionFragment - Fragment que lista todas as Transações. (usando paginação)
-PaymentFragment - Fragment que lista todos os Payments. (usando paginação)
+* TransactionFragment - Fragment que lista todas as Transações. (usando paginação)
+* PaymentFragment - Fragment que lista todos os Payments. (usando paginação)
 							 							   
 # Descrição do teste
 
