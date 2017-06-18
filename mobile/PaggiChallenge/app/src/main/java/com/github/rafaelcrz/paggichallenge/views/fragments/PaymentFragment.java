@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.github.rafaelcrz.android_endless_scroll_lib.EndlessListener;
 import com.github.rafaelcrz.android_endless_scroll_lib.ScrollEndless;
 import com.github.rafaelcrz.paggichallenge.R;
 import com.github.rafaelcrz.paggichallenge.adapters.PaymentsAdapter;
@@ -96,7 +95,7 @@ public class PaymentFragment extends Fragment implements SwipeRefreshLayout.OnRe
 
         getPayments();
 
-        scrollEndless.addScrollEndless(new EndlessListener() {
+        scrollEndless.addScrollEndless(new ScrollEndless.EndlessScrollListener() {
             @Override
             public void onLoadMore() {
                 getPayments();

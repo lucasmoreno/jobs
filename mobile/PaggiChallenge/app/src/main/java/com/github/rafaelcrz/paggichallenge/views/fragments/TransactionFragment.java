@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.github.rafaelcrz.android_endless_scroll_lib.EndlessListener;
 import com.github.rafaelcrz.android_endless_scroll_lib.ScrollEndless;
 import com.github.rafaelcrz.paggichallenge.R;
 import com.github.rafaelcrz.paggichallenge.adapters.TransactionAdapter;
@@ -91,7 +90,7 @@ public class TransactionFragment extends Fragment implements SwipeRefreshLayout.
         paymentApi.setPageSize(String.valueOf(PAGE_SIZE));
         getTransactions();
 
-        scrollEndless.addScrollEndless(new EndlessListener() {
+        scrollEndless.addScrollEndless(new ScrollEndless.EndlessScrollListener() {
             @Override
             public void onLoadMore() {
                 getTransactions();
