@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/item_padding"
+    tools:context="com.github.rafaelcrz.paggichallenge.views.activity.TransactionResultActivity">
+
+    <ImageView
+        android:id="@+id/imgTransactResultImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_checked" />
+
+    <TextView
+        android:id="@+id/tvTransactResultAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgTransactResultImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="-----"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTransactResultAmount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/transaction_approved"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvTransactResultDescriptor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:text="--------"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btTransactResultReturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:text="OK" />
+</RelativeLayout>

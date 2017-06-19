@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Paggi</string>
+    <string name="title_charges">Transactions</string>
+    <string name="title_payments">Payments</string>
+
+
+    <string name="amount">Amount</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="amount_value_void">Please, put the amount total.</string>
+    <string name="id_customer_charged">Id of the customer you want to be charged</string>
+    <string name="installment_number">Installment numbers</string>
+    <string name="id_card">Id card</string>
+    <string name="confirm_transaction">Confirm transaction</string>
+    <string name="cofirm_transaction_msg">It has successfully completed the transaction</string>
+    <string name="cofirm_transaction_wait">Confirming transaction</string>
+    <string name="transaction_approved">Yout transaction is approved.</string>
+</resources>

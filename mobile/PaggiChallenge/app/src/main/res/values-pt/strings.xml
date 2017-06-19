@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="amount">Montante</string>
+    <string name="amount_value_void">Favor informar o valor do montante</string>
+    <string name="cancel">Cancelar</string>
+    <string name="cofirm_transaction_msg">Para completar, confirme a transação.</string>
+    <string name="cofirm_transaction_wait">Confirmando transação</string>
+    <string name="confirm">Confirme</string>
+    <string name="confirm_transaction">Confirmar transação</string>
+    <string name="id_card">Identificação do cartão</string>
+    <string name="id_customer_charged">Id do cliente que será cobrado</string>
+    <string name="installment_number">Número de parcelas</string>
+    <string name="title_charges">Transações</string>
+    <string name="title_payments">Pagamentos</string>
+    <string name="transaction_approved">Sua transação bancaria está aprovada.</string>
+</resources>
