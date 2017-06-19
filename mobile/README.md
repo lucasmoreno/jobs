@@ -27,6 +27,11 @@ E-mail: rafael.felipe1989@gmail.com
 
 * TransactionFragment - Fragment que lista todas as Transações. (usando paginação)
 * PaymentFragment - Fragment que lista todos os Payments. (usando paginação)
+
+## Telas
+
+![Sample](telas.png)
+
 							 							   
 # Descrição do teste
 
