@@ -21,6 +21,19 @@ RSpec.describe ::Models::Charge do
   let(:intermediaries) { [intermediary] }
   let(:intermediary) { FactoryGirl.build :intermediary }
 
+  describe '#calculate_intermediaries_amounts!' do
+    subject { model.calculate_intermediaries_amounts! }
+
+    before do
+      allow(intermediary).to receive(:calculate_amount!).with(charge_amount: amount)
+    end
+
+    it do
+      subject
+      expect(intermediary).to have_received(:calculate_amount!).with(charge_amount: amount).once
+    end
+  end
+
   describe '#to_h' do
     subject { model.to_h }
 

@@ -7,4 +7,28 @@ RSpec.describe ::Models::Intermediary do
   it { is_expected.to validate_presence_of(:description) }
   it { is_expected.to validate_presence_of(:fee) }
   it { is_expected.to validate_presence_of(:flat) }
+
+  subject(:model) do
+    described_class.new(
+      description: description,
+      fee: fee,
+      flat: flat
+    )
+  end
+  let(:description) { 'le description' }
+  let(:fee) { 0.54 }
+  let(:flat) { 2 }
+
+  describe '#calculate_amount!' do
+    subject { model.calculate_amount!(charge_amount: charge_amount) }
+    let(:charge_amount) { 12 }
+    let(:calculated_amount) { charge_amount * fee + flat }
+
+    it { is_expected.to eq calculated_amount }
+
+    it 'sets the amount attribute' do
+      subject
+      expect(model.amount).to eq calculated_amount
+    end
+  end
 end

@@ -5,6 +5,7 @@ module API
       charge = ::Models::Charge.new(payload)
 
       if charge.valid?
+        charge.calculate_intermediaries_amounts!
         created_charge = ::Repositories::Charge.create(charge)
         json created_charge.to_h
       else
