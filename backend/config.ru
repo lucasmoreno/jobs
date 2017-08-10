@@ -16,3 +16,5 @@ require_relative './models/charge'
 
 # Repositories
 require_relative './repositories/charge'
+
+run API::Charge
