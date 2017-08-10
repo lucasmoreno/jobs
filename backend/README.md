@@ -1,6 +1,28 @@
 # Teste Back-end
 Nesse teste é preciso fazer uma API REST (JSON), com um endpoint para criar transação:
 
+## Ferramentas principais
+- Ruby 2.2.5
+- RSpec 3.6.0
+- Sinatra 1.4.8
+- Virtus 1.0.5
+
+## Configuração
+1. Instalar gem bundler
+```
+gem install bundler
+```
+
+2. Instalar gems do Gemfile
+```
+bundle install
+```
+
+3. Iniciar o servidor
+```
+bundle exec rackup
+```
+
 #### [POST] /charge
 ###### params:
 * card (map)
