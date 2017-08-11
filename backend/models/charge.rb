@@ -5,6 +5,8 @@ module Models
     attribute :card_id, String
     attribute :id, String
     attribute :intermediaries, Array[Intermediary]
+    attribute :inserted_at, DateTime
+    attribute :updated_at, DateTime
 
     # @return [Array<Intermediary>]
     def calculate_intermediaries_amounts!
@@ -19,6 +21,8 @@ module Models
         id: id,
         card_id: card_id,
         amount: amount,
+        inserted_at: inserted_at,
+        updated_at: updated_at,
         intermediaries: intermediaries.map(&:to_h)
       }
     end

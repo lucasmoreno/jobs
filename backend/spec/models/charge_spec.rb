@@ -11,7 +11,9 @@ RSpec.describe ::Models::Charge do
       card_id: card_id,
       amount: amount,
       card: card,
-      intermediaries: intermediaries
+      intermediaries: intermediaries,
+      inserted_at: inserted_at,
+      updated_at: updated_at
     )
   end
   let(:id) { 'le_id' }
@@ -20,6 +22,8 @@ RSpec.describe ::Models::Charge do
   let(:card) { FactoryGirl.build :card }
   let(:intermediaries) { [intermediary] }
   let(:intermediary) { FactoryGirl.build :intermediary }
+  let(:inserted_at) { Time.now }
+  let(:updated_at) { Time.now }
 
   describe '#calculate_intermediaries_amounts!' do
     subject { model.calculate_intermediaries_amounts! }
@@ -42,7 +46,9 @@ RSpec.describe ::Models::Charge do
         id: id,
         card_id: card_id,
         amount: amount,
-        intermediaries: [intermediary_to_h]
+        intermediaries: [intermediary_to_h],
+        inserted_at: inserted_at,
+        updated_at: updated_at
       }
     end
     let(:intermediary_to_h) {  { key: :value } }

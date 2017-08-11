@@ -8,6 +8,8 @@ module Repositories
     def self.create(charge)
       charge.id = SecureRandom.uuid
       charge.card_id = SecureRandom.uuid
+      charge.inserted_at = Time.now
+      charge.updated_at = Time.now
       charge
     end
   end
