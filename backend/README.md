@@ -9,21 +9,27 @@ Nesse teste é preciso fazer uma API REST (JSON), com um endpoint para criar tra
 
 ## Configuração
 1. Instalar gem bundler
-```
+```console
 gem install bundler
 ```
 
 2. Instalar gems do Gemfile
-```
+```console
 bundle install
 ```
 
 3. Iniciar o servidor
-```
+```console
 bundle exec rackup
 ```
 
-#### [POST] /charge
+## Utilização
+
+Endpoint:
+```
+POST http://localhost:9292/charge
+```
+
 ###### params:
 * card (map)
     * holder
@@ -36,7 +42,7 @@ bundle exec rackup
     * fee (opcional)
     * flat (opcional)
     * description (opcional)
-    
+
 ###### return:
 * id
 * card_id
@@ -49,8 +55,7 @@ bundle exec rackup
 * inserted_at
 * updated_at
 
-### Input/Output
-Request
+Exemplo de payload:
 ```json
 {
   "amount": 10,
@@ -70,21 +75,30 @@ Request
   ]
 }
 ```
-Response
+
+Exemplo de resposta:
 ```json
 {
-  "id": "a5fd213e-52e5-4dd0-b5df-85c3de190514",
+  "id": "077e3ec2-da33-48f9-bdcf-a3213d962972",
+  "card_id": "4fb0f326-cac3-40d8-859b-37f6f5ab7b5f",
   "amount": 10,
-  "card_id": "1a348d1f-5028-45e4-ad66-a91a19cd5549",
+  "inserted_at": "2017-08-10T22:21:16-03:00",
+  "updated_at": "2017-08-10T22:21:16-03:00",
   "intermediaries": [
-    {
-      "fee": 0,
-      "flat": 5,
-      "amount": 5,
-      "description": "Tax of KiiK"
-    }
+      {
+          "amount": 5,
+          "description": "Tax of KiiK",
+          "fee": 0,
+          "flat": 5
+      }
   ]
 }
+```
+
+
+## Testes
+```
+bundle exec rspec
 ```
 
 #### Obs
