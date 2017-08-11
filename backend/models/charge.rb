@@ -8,6 +8,8 @@ module Models
     attribute :inserted_at, DateTime
     attribute :updated_at, DateTime
 
+    validates :amount, numericality: { greater_than_or_equal_to: 0 }, presence: true
+
     # @return [Array<Intermediary>]
     def calculate_intermediaries_amounts!
       intermediaries.map do |intermediary|

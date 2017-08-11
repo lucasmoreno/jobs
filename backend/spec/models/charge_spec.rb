@@ -5,6 +5,9 @@ RSpec.describe ::Models::Charge do
   it { expect(described_class).to have_attribute(:id).of_type(String) }
   it { expect(described_class).to have_attribute(:intermediaries).of_type(Array, member_type: ::Models::Intermediary) }
 
+  it { is_expected.to validate_presence_of(:amount) }
+  it { is_expected.to validate_numericality_of(:amount).is_greater_than_or_equal_to(0) }
+
   subject(:model) do
     described_class.new(
       id: id,

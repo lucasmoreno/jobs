@@ -5,8 +5,10 @@ RSpec.describe ::Models::Intermediary do
   it { expect(described_class).to have_attribute(:flat).of_type(Float) }
 
   it { is_expected.to validate_presence_of(:description) }
-  it { is_expected.to validate_presence_of(:fee) }
-  it { is_expected.to validate_presence_of(:flat) }
+  it { is_expected.to validate_numericality_of(:fee).is_less_than_or_equal_to(1) }
+  it { is_expected.to validate_numericality_of(:fee).is_greater_than_or_equal_to(0) }
+  it { is_expected.to validate_numericality_of(:flat).is_greater_than_or_equal_to(0) }
+  it { is_expected.to validate_numericality_of(:amount).is_greater_than_or_equal_to(0) }
 
   subject(:model) do
     described_class.new(

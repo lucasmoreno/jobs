@@ -6,6 +6,6 @@ module Models
     attribute :holder, String
     attribute :number, String
 
-    validates_presence_of :cvv, :expiration_month, :expiration_year, :holder, :number
+    validates :cvv, :expiration_month, :expiration_year, :holder, :number, presence: true
   end
 end
